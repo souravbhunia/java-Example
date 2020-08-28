@@ -1,10 +1,6 @@
-JAVA ASSIGNMENT 2020
-
-									SOURAV BHUNIA
-									ID:1811100001057
-									B.TECH,CSE
 
 J1:Overload a constructor of class cone. Create at least two instances of cone demonstrate constructor overloading. The class has two methods, which return area and volume. Implement “this” keyword in JAVA.
+
 import java.lang.*;
 class sample
 {
@@ -46,19 +42,7 @@ class cone
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-j2 Create a Complex class to implement complex addition, subtraction, multiplication and division, finding argument of the complex number. Use constructor overloading
+j2. Create a Complex class to implement complex addition, subtraction, multiplication and division, finding argument of the complex number. Use constructor overloading
 class complex1
 {
     private float real,imag;
@@ -128,17 +112,7 @@ class complex
 
 
 
-
-
-
-
-
-
-
-
-
-
-j3  Create a class fraction to implement addition, subtraction, multiplication and division of two proper fractions. This class also contains a private method minimize which can minimizes 2/4 to ½. You have to provide suitable method for taking input and printing the value of the fraction.
+j3.  Create a class fraction to implement addition, subtraction, multiplication and division of two proper fractions. This class also contains a private method minimize which can minimizes 2/4 to ½. You have to provide suitable method for taking input and printing the value of the fraction.
 
 
 import java.util.*;
@@ -477,22 +451,7 @@ class cone
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-j2 Create a Complex class to implement complex addition, subtraction, multiplication and division, finding argument of the complex number. Use constructor overloading
+j2. Create a Complex class to implement complex addition, subtraction, multiplication and division, finding argument of the complex number. Use constructor overloading
 class complex1
 {
     private float real,imag;
