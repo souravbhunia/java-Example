@@ -1,0 +1,964 @@
+JAVA ASSIGNMENT 2020
+
+									SOURAV BHUNIA
+									ID:1811100001057
+									B.TECH,CSE
+
+J1:Overload a constructor of class cone. Create at least two instances of cone demonstrate constructor overloading. The class has two methods, which return area and volume. Implement “this” keyword in JAVA.
+import java.lang.*;
+class sample
+{
+	int R,H;
+	sample()
+	{
+		R=H=0;
+	}
+	
+	 sample(int R,int H)
+	{
+		this.R=R;
+		this.H=H;
+	}
+	
+	void display()
+	{
+		System.out.println("area of  cone is:"+((3.14*R*R)+(3.14*R*H)));
+		System.out.println("volume of  cone is:"+(3.14*R*R*H)/3);
+		
+	}
+	
+}
+class cone
+{
+	public static void main(String[] args)
+	{
+		sample s1=new sample(2,3);
+		s1.display();
+		sample s2=new sample(4,5);
+		s2.display();
+		
+
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+j2 Create a Complex class to implement complex addition, subtraction, multiplication and division, finding argument of the complex number. Use constructor overloading
+class complex1
+{
+    private float real,imag;
+    complex1()
+    {
+        real=400;
+        imag=40;
+    }
+    complex1(int a,int b)
+    {
+        real=a;
+        imag=b;
+    }
+  public  void  sum(complex1 x,complex1 y)
+    {
+        
+        this.real=x.real+y.real;
+        this.imag=x.imag+y.imag;
+        System.out.println("The addition is"+this.real+"+"+this.imag+"i");
+        
+
+    }
+   public void subtract(complex1 x,complex1 y)
+    {
+        
+        this.real=x.real-y.real;
+        this.imag=x.imag-y.imag;
+        System.out.println("The subtraction is"+this.real+"-"+this.imag+"i");
+        
+
+    }
+    public void multiply(complex1 x,complex1 y)
+    {
+        
+        this.real=x.real*y.real;
+        this.imag=x.imag*y.imag;
+        System.out.println("The multiplication is"+this.real+"*"+this.imag+"i");
+        
+
+    }
+    public void divide(complex1 x,complex1 y)
+    {
+       
+        this.real=x.real/y.real;
+        this.imag=x.imag/y.imag;
+        System.out.println("The division is is"+this.real+"/"+this.imag+"i");
+        
+
+    }
+}
+class complex
+{
+    public static void main(String args[])
+    {
+        complex1 c1=new complex1();
+        complex1 c2=new complex1(200,20);
+        complex1 c3=new complex1();
+        c3.sum(c1,c2);
+        c3.subtract(c1,c2);
+        c3.multiply(c1,c2);
+        c3.divide(c1,c2);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+j3  Create a class fraction to implement addition, subtraction, multiplication and division of two proper fractions. This class also contains a private method minimize which can minimizes 2/4 to ½. You have to provide suitable method for taking input and printing the value of the fraction.
+
+
+import java.util.*;
+public class Fraction
+{
+   
+   private iclass complex1
+{
+    private float real,imag;
+    complex1()
+    {
+        real=400;
+        imag=40;
+    }
+    complex1(int a,int b)
+    {
+        real=a;
+        imag=b;
+    }
+  public  void  sum(complex1 x,complex1 y)
+    {
+        
+        this.real=x.real+y.real;
+        this.imag=x.imag+y.imag;
+        System.out.println("The addition is"+this.real+"+"+this.imag+"i");
+        
+
+    }
+   public void subtract(complex1 x,complex1 y)
+    {
+        
+        this.real=x.real-y.real;
+        this.imag=x.imag-y.imag;
+        System.out.println("The subtraction is"+this.real+"-"+this.imag+"i");
+        
+
+    }
+    public void multiply(complex1 x,complex1 y)
+    {
+        
+        this.real=x.real*y.real;
+        this.imag=x.imag*y.imag;
+        System.out.println("The multiplication is"+this.real+"*"+this.imag+"i");
+        
+
+    }
+    public void divide(complex1 x,complex1 y)
+    {
+       
+        this.real=x.real/y.real;
+        this.imag=x.imag/y.imag;
+        System.out.println("The division is is"+this.real+"/"+this.imag+"i");
+        
+
+    }
+}
+class complex
+{
+    public static void main(String args[])
+    {
+        complex1 c1=new complex1();
+        complex1 c2=new complex1(200,20);
+        complex1 c3=new complex1();
+        c3.sum(c1,c2);
+        c3.subtract(c1,c2);
+        c3.multiply(c1,c2);
+        c3.divide(c1,c2);
+    }
+}nt numerator, denominator;
+ public Fraction()
+   {
+      numerator = denominator = 0;
+   }
+ public int getNumerator()
+   {
+      return numerator;
+   }
+public void setNumerator(int num)
+   {
+      numerator=num;
+   }
+public int getDenominator()
+   {
+      return denominator;
+   }
+public void setDenominator(int den)
+   {
+      denominator=den;
+   }
+ public Fraction add(Fraction b)
+   {
+     
+      if ((denominator == 0) || (b.denominator == 0))
+         throw new IllegalArgumentException("invalid denominator");
+     
+      int common = lcd(denominator, b.denominator);
+   
+      Fraction commonA = new Fraction();
+      Fraction commonB = new Fraction();
+      commonA = convert(common);
+      commonB = b.convert(common);
+   
+      Fraction sum = new Fraction();
+     
+      sum.numerator = commonA.numerator + commonB.numerator;
+      sum.denominator = common;
+ 
+      sum = sum.reduce();
+      return sum;
+   }
+public Fraction subtract(Fraction b)
+   {
+     
+      if ((denominator == 0) || (b.denominator == 0))
+         throw new IllegalArgumentException("invalid denominator");
+   
+      int common = lcd(denominator, b.denominator);
+   
+      Fraction commonA = new Fraction();
+      Fraction commonB = new Fraction();
+      commonA = convert(common);
+      commonB = b.convert(common);
+   
+      Fraction diff = new Fraction();
+   
+      diff.numerator = commonA.numerator - commonB.numerator;
+      diff.denominator = common;
+   
+      diff = diff.reduce();
+      return diff;
+   }
+public Fraction multiply(Fraction b)
+   {
+     
+      if ((denominator == 0) || (b.denominator == 0))
+         throw new IllegalArgumentException("invalid denominator");
+ 
+      Fraction product = new Fraction();
+   
+      product.numerator = numerator * b.numerator;
+      product.denominator = denominator * b.denominator;
+ 
+      product = product.reduce();
+      return product;
+   }
+ public Fraction divide(Fraction b)
+   {
+     
+      if ((denominator == 0) || (b.numerator == 0))
+         throw new IllegalArgumentException("invalid denominator");
+   
+      Fraction result = new Fraction();
+ 
+      result.numerator = numerator * b.denominator;
+      result.denominator = denominator * b.numerator;
+
+      result = result.reduce();
+      return result;
+   }
+public void input()
+   {
+   Scanner sc=new Scanner(System.in);
+      System.out.print("Please enter an integer for numerator: ");
+   
+      numerator = sc.nextInt();
+     
+      do {
+         System.out.print("Please enter a non-zero integer for denominator: ");
+         denominator = sc.nextInt();
+         
+         if (denominator == 0)
+            System.out.println("Invalid value.  Please try again.");
+      } while (denominator == 0);
+   }
+public void output()
+   {
+       System.out.print(this);
+   }
+public String toString()
+   {
+      String buffer = numerator + "/" + denominator;
+      return buffer;
+   }
+private int lcd(int denom1, int denom2)
+   {
+      int factor = denom1;
+      while ((denom1 % denom2) != 0)
+         denom1 += factor;
+      return denom1;
+   }
+ private int gcd(int denom1, int denom2)
+   {
+      int factor = denom2;
+      while (denom2 != 0) {
+         factor = denom2;
+         denom2 = denom1 % denom2;
+         denom1 = factor;
+      }
+      return denom1;
+   }
+private Fraction convert(int common)
+   {
+      Fraction result = new Fraction();
+      int factor = common / denominator;
+      result.numerator = numerator * factor;
+      result.denominator = common;
+      return result;
+   }
+ private Fraction reduce()
+   {
+      Fraction result = new Fraction();
+      int common = 0;
+     
+      int num = Math.abs(numerator);
+      int den = Math.abs(denominator);
+     
+      if (num > den)
+         common = gcd(num, den);
+      else if (num < den)
+         common = gcd(den, num);
+      else  
+         common = num;
+
+     
+      result.numerator = numerator / common;
+      result.denominator = denominator / common;
+      return result;
+   }
+ public static void main(String args[])
+   {
+      Fraction f1 = new Fraction();  
+      Fraction f2 = new Fraction();  
+     
+      f1.setNumerator(1);
+      f1.setDenominator(3);
+      f2.setNumerator(1);
+      f2.setDenominator(6);
+     
+     
+      Fraction result = new Fraction();
+     
+      result = f1.add(f2);
+     
+      System.out.println(f1 + " + " + f2 + " = " + result);
+     
+      result = f2.add(f1);
+     
+      System.out.println(f2 + " + " + f1 + " = " + result);
+      System.out.println();
+
+     
+      result = f1.subtract(f2);
+     
+      System.out.println(f1 + " - " + f2 + " = " + result);
+     
+      result = f2.subtract(f1);
+     
+      System.out.println(f2 + " - " + f1 + " = " + result);
+
+     
+      System.out.println();
+      System.out.println("Fraction 1:");
+      f1.input();
+      System.out.println();
+      System.out.println("Fraction 2:");
+      f2.input();
+      System.out.println();
+
+     
+      result = f1.multiply(f2);
+
+     
+      f1.output();
+      System.out.print(" * ");
+      f2.output();
+      System.out.print(" = ");
+      result.output();
+      System.out.println();
+
+     
+      result = f1.divide(f2);
+
+     
+      f1.output();
+      System.out.print(" / ");
+      f2.output();
+      System.out.print(" = ");
+      result.output();
+      System.out.println();
+   }
+
+}
+
+JAVA ASSIGNMENT 2020
+
+									SOURAV BHUNIA
+									ID:1811100001057
+									B.TECH,CSE
+
+J1:Overload a constructor of class cone. Create at least two instances of cone demonstrate constructor overloading. The class has two methods, which return area and volume. Implement “this” keyword in JAVA.
+import java.lang.*;
+class sample
+{
+	int R,H;
+	sample()
+	{
+		R=H=0;
+	}
+	
+	 sample(int R,int H)
+	{
+		this.R=R;
+		this.H=H;
+	}
+	
+	void display()
+	{
+		System.out.println("area of  cone is:"+((3.14*R*R)+(3.14*R*H)));
+		System.out.println("volume of  cone is:"+(3.14*R*R*H)/3);
+		
+	}
+	
+}
+class cone
+{
+	public static void main(String[] args)
+	{
+		sample s1=new sample(2,3);
+		s1.display();
+		sample s2=new sample(4,5);
+		s2.display();
+		
+
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+j2 Create a Complex class to implement complex addition, subtraction, multiplication and division, finding argument of the complex number. Use constructor overloading
+class complex1
+{
+    private float real,imag;
+    complex1()
+    {
+        real=400;
+        imag=40;
+    }
+    complex1(int a,int b)
+    {
+        real=a;
+        imag=b;
+    }
+  public  void  sum(complex1 x,complex1 y)
+    {
+        
+        this.real=x.real+y.real;
+        this.imag=x.imag+y.imag;
+        System.out.println("The addition is"+this.real+"+"+this.imag+"i");
+        
+
+    }
+   public void subtract(complex1 x,complex1 y)
+    {
+        
+        this.real=x.real-y.real;
+        this.imag=x.imag-y.imag;
+        System.out.println("The subtraction is"+this.real+"-"+this.imag+"i");
+        
+
+    }
+    public void multiply(complex1 x,complex1 y)
+    {
+        
+        this.real=x.real*y.real;
+        this.imag=x.imag*y.imag;
+        System.out.println("The multiplication is"+this.real+"*"+this.imag+"i");
+        
+
+    }
+    public void divide(complex1 x,complex1 y)
+    {
+       
+        this.real=x.real/y.real;
+        this.imag=x.imag/y.imag;
+        System.out.println("The division is is"+this.real+"/"+this.imag+"i");
+        
+
+    }
+}
+class complex
+{
+    public static void main(String args[])
+    {
+        complex1 c1=new complex1();
+        complex1 c2=new complex1(200,20);
+        complex1 c3=new complex1();
+        c3.sum(c1,c2);
+        c3.subtract(c1,c2);
+        c3.multiply(c1,c2);
+        c3.divide(c1,c2);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+j3  Create a class fraction to implement addition, subtraction, multiplication and division of two proper fractions. This class also contains a private method minimize which can minimizes 2/4 to ½. You have to provide suitable method for taking input and printing the value of the fraction.
+
+
+import java.util.*;
+public class Fraction
+{
+   
+   private iclass complex1
+{
+    private float real,imag;
+    complex1()
+    {
+        real=400;
+        imag=40;
+    }
+    complex1(int a,int b)
+    {
+        real=a;
+        imag=b;
+    }
+  public  void  sum(complex1 x,complex1 y)
+    {
+        
+        this.real=x.real+y.real;
+        this.imag=x.imag+y.imag;
+        System.out.println("The addition is"+this.real+"+"+this.imag+"i");
+        
+
+    }
+   public void subtract(complex1 x,complex1 y)
+    {
+        
+        this.real=x.real-y.real;
+        this.imag=x.imag-y.imag;
+        System.out.println("The subtraction is"+this.real+"-"+this.imag+"i");
+        
+
+    }
+    public void multiply(complex1 x,complex1 y)
+    {
+        
+        this.real=x.real*y.real;
+        this.imag=x.imag*y.imag;
+        System.out.println("The multiplication is"+this.real+"*"+this.imag+"i");
+        
+
+    }
+    public void divide(complex1 x,complex1 y)
+    {
+       
+        this.real=x.real/y.real;
+        this.imag=x.imag/y.imag;
+        System.out.println("The division is is"+this.real+"/"+this.imag+"i");
+        
+
+    }
+}
+class complex
+{
+    public static void main(String args[])
+    {
+        complex1 c1=new complex1();
+        complex1 c2=new complex1(200,20);
+        complex1 c3=new complex1();
+        c3.sum(c1,c2);
+        c3.subtract(c1,c2);
+        c3.multiply(c1,c2);
+        c3.divide(c1,c2);
+    }
+}nt numerator, denominator;
+ public Fraction()
+   {
+      numerator = denominator = 0;
+   }
+ public int getNumerator()
+   {
+      return numerator;
+   }
+public void setNumerator(int num)
+   {
+      numerator=num;
+   }
+public int getDenominator()
+   {
+      return denominator;
+   }
+public void setDenominator(int den)
+   {
+      denominator=den;
+   }
+ public Fraction add(Fraction b)
+   {
+     
+      if ((denominator == 0) || (b.denominator == 0))
+         throw new IllegalArgumentException("invalid denominator");
+     
+      int common = lcd(denominator, b.denominator);
+   
+      Fraction commonA = new Fraction();
+      Fraction commonB = new Fraction();
+      commonA = convert(common);
+      commonB = b.convert(common);
+   
+      Fraction sum = new Fraction();
+     
+      sum.numerator = commonA.numerator + commonB.numerator;
+      sum.denominator = common;
+ 
+      sum = sum.reduce();
+      return sum;
+   }
+public Fraction subtract(Fraction b)
+   {
+     
+      if ((denominator == 0) || (b.denominator == 0))
+         throw new IllegalArgumentException("invalid denominator");
+   
+      int common = lcd(denominator, b.denominator);
+   
+      Fraction commonA = new Fraction();
+      Fraction commonB = new Fraction();
+      commonA = convert(common);
+      commonB = b.convert(common);
+   
+      Fraction diff = new Fraction();
+   
+      diff.numerator = commonA.numerator - commonB.numerator;
+      diff.denominator = common;
+   
+      diff = diff.reduce();
+      return diff;
+   }
+public Fraction multiply(Fraction b)
+   {
+     
+      if ((denominator == 0) || (b.denominator == 0))
+         throw new IllegalArgumentException("invalid denominator");
+ 
+      Fraction product = new Fraction();
+   
+      product.numerator = numerator * b.numerator;
+      product.denominator = denominator * b.denominator;
+ 
+      product = product.reduce();
+      return product;
+   }
+ public Fraction divide(Fraction b)
+   {
+     
+      if ((denominator == 0) || (b.numerator == 0))
+         throw new IllegalArgumentException("invalid denominator");
+   
+      Fraction result = new Fraction();
+ 
+      result.numerator = numerator * b.denominator;
+      result.denominator = denominator * b.numerator;
+
+      result = result.reduce();
+      return result;
+   }
+public void input()
+   {
+   Scanner sc=new Scanner(System.in);
+      System.out.print("Please enter an integer for numerator: ");
+   
+      numerator = sc.nextInt();
+     
+      do {
+         System.out.print("Please enter a non-zero integer for denominator: ");
+         denominator = sc.nextInt();
+         
+         if (denominator == 0)
+            System.out.println("Invalid value.  Please try again.");
+      } while (denominator == 0);
+   }
+public void output()
+   {
+       System.out.print(this);
+   }
+public String toString()
+   {
+      String buffer = numerator + "/" + denominator;
+      return buffer;
+   }
+private int lcd(int denom1, int denom2)
+   {
+      int factor = denom1;
+      while ((denom1 % denom2) != 0)
+         denom1 += factor;
+      return denom1;
+   }
+ private int gcd(int denom1, int denom2)
+   {
+      int factor = denom2;
+      while (denom2 != 0) {
+         factor = denom2;
+         denom2 = denom1 % denom2;
+         denom1 = factor;
+      }
+      return denom1;
+   }
+private Fraction convert(int common)
+   {
+      Fraction result = new Fraction();
+      int factor = common / denominator;
+      result.numerator = numerator * factor;
+      result.denominator = common;
+      return result;
+   }
+ private Fraction reduce()
+   {
+      Fraction result = new Fraction();
+      int common = 0;
+     
+      int num = Math.abs(numerator);
+      int den = Math.abs(denominator);
+     
+      if (num > den)
+         common = gcd(num, den);
+      else if (num < den)
+         common = gcd(den, num);
+      else  
+         common = num;
+
+     
+      result.numerator = numerator / common;
+      result.denominator = denominator / common;
+      return result;
+   }
+ public static void main(String args[])
+   {
+      Fraction f1 = new Fraction();  
+      Fraction f2 = new Fraction();  
+     
+      f1.setNumerator(1);
+      f1.setDenominator(3);
+      f2.setNumerator(1);
+      f2.setDenominator(6);
+     
+     
+      Fraction result = new Fraction();
+     
+      result = f1.add(f2);
+     
+      System.out.println(f1 + " + " + f2 + " = " + result);
+     
+      result = f2.add(f1);
+     
+      System.out.println(f2 + " + " + f1 + " = " + result);
+      System.out.println();
+
+     
+      result = f1.subtract(f2);
+     
+      System.out.println(f1 + " - " + f2 + " = " + result);
+     
+      result = f2.subtract(f1);
+     
+      System.out.println(f2 + " - " + f1 + " = " + result);
+
+     
+      System.out.println();
+      System.out.println("Fraction 1:");
+      f1.input();
+      System.out.println();
+      System.out.println("Fraction 2:");
+      f2.input();
+      System.out.println();
+
+     
+      result = f1.multiply(f2);
+
+     
+      f1.output();
+      System.out.print(" * ");
+      f2.output();
+      System.out.print(" = ");
+      result.output();
+      System.out.println();
+
+     
+      result = f1.divide(f2);
+
+     
+      f1.output();
+      System.out.print(" / ");
+      f2.output();
+      System.out.print(" = ");
+      result.output();
+      System.out.println();
+   }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+J4. Define a class volume and then find out the volume of cube, cylinder and rectangular box using method overloading.
+class volume
+{
+	float a,r,h,l,w;
+	void vol(float a)
+	{
+		this.a=a;
+		System.out.println("volume of cube: "+(a*a*a));
+	}
+	void vol( float r,float h)
+	{
+		this.r=r;
+		this.h=h;
+		System.out.println("volume of cylinder: "+(3.14*r*r*h));
+	}
+	void vol(float l,float w,float h)
+	{
+		this.l=l;
+		this.w=w;
+		this.h=h;
+		System.out.println("volume of rectangular box is: "+(l*w*h));
+	}
+}
+class j4
+{
+	public static void main(String[] args)
+	{
+		volume v[]=new volume[2];
+		v[0]=new volume();
+		v[0].vol(5);
+		v[0].vol(6,8);
+		v[0].vol(6,9,2);
+		
+		v[1]=new volume();
+		v[1].vol(9);
+		v[1].vol(2,8);
+		v[1].vol(6,7,2);
+		System.out.println(v[0]==v[1]);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+J5:Create a class Matrix to implement addition, multiplication.
+class matrix
+{
+	public static void main(String args[])
+	{
+		int a[][]={{2,3,1},{3,2,1}};
+		int b[][]={{3,5,1},{3,1,2}};
+		int c[][]=new int[2][3];
+		System.out.println("Addition");
+		for(int i=0;i<2;i++)
+		{
+
