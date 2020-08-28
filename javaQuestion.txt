@@ -1,0 +1,57 @@
+
+1.	Overload a constructor of class cone. Create at least two instances of cone demonstrate constructor overloading. The class has two methods, which return area and volume. Implement “this” keyword in JAVA.
+
+
+
+
+2.	Create a Complex class to implement complex addition, subtraction, multiplication and division, finding argument of the complex number. Use constructor overloading.
+
+
+
+
+3.	Create a class fraction to implement addition, subtraction, multiplication and division of two proper fractions. This class also contains a private method minimize which can minimizes 2/4 to ½. You have to provide suitable method for taking input and printing the value of the fraction.
+
+
+
+4.	Define a class volume and then find out the volume of cube, cylinder and rectangular box using method overloading.
+
+
+5.	Create a class Matrix to implement addition, multiplication.
+
+
+6.	Create class stack and implement suitable methods.
+
+
+7.	Create class circular queue and implement suitable methods.
+
+ 7i>> Write a java program using the following class hierarchy of an educational institution. Class Staff (name, code). Class Officer (grade), subclass of Staff. Class Teacher (subject), subclass of Staff.Class Typist (speed), subclass of Staff.Class CasualTypist (daily wages), subclass Typist.Class RegularTypist (remuneration), subclass of Typist.Create different objects of each class except Staff, input values for different variables for each one, store these objects using array.
+8.	Assume that a bank maintains two kinds of accounts for their customer: first one is called savings account and the other is called current account. The savings account holders should also maintain a minimum balance and if the balance falls below this level, a service charge imposed. Create a class account that stores customer name, account number and type of account. From this, derive classes CrrAcc and SavAcc to make them more specific to their requirements. Include the necessary methods to achieve the following tasks: Accept deposit from a customer and update the balance.Display the balance.Compute and deposit interest.Permit withdrawal and update the balance.Check for minimum balance, impose penalty, if necessary, and update the balance.
+
+
+9.	Create an abstract class called shape to model a three dimensional shape. Derive classes cube and cone. Let user specify the size. The user may specify many items of the same shape. All the instances of each shape should be stored into a single array. Write a program to calculate area and volume of each shape.
+
+10.	Using interface calculate the area of the rectangle and circle.
+
+
+11.	Replace a particular substring from a given string.
+
+12.	Calculate the frequency of each character of a given string.
+
+13.	Copy a string from one file to another without terminating character.
+14.	Count frequency of each character in a file.
+15.	Copy the context from one file to another file located to another machine (use socket).
+16.	Implement Bounded Buffer Problem.
+17.	Implement Dining Philosophers Problem (create deadlock).
+18.	Create 10 threads to find out all prime numbers within 1 to 100, distribute the job among 10 threads. 
+19.	Create four threads with priority 1,3,5,7 respectively. Update a counter in each of the threads for ten sec. print the final value of the count from each thread.
+20.	Create two threads; one will print from 1 to 10. Another will print 10 to 1. In the second thread if value is 6 it will sleep for 10000 milliseconds.
+21.	Write a program that prints the elapsed time each second from the start of execution, with another thread that prints a message every fifteen seconds. Have the message-printing thread be notified by the time-printing thread as each second passes by. Add another thread that prints a different message every seven seconds without modifying the time-printing thread.
+22.	Write an applet program in java to design a calculator.
+23.	Write an applet to draw concentric circles in different colors.
+24.	Write a program to draw line, rectangle and oval shape using switch case and applet.(using choice).
+25.	Design a java applet that programs the mouse so that we may draw various shapes like circle, rectangle etc. using click and drag operations.
+26.	Design an applet to implement Microsoft paint.
+27.	Design an applet to create a notepad.
+ 
+
+
